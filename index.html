@@ -26,11 +26,11 @@
     	"x": {"field": "year", "type": "ordinal"},
     	"y": {"field": "money",  "type": "quantitative",
 						"size": { "field": "number",
-          					  "type": "ordinal"},
-          					  "stack":  "normalize"},
+          					  "type": "ordinal"}},
     				"color": { "field": "denom",
       							   "type": "nominal",
-      				 			   "scale": {"scheme": "tableau10"}}
+      				 			   "scale": {"scheme": "tableau10",
+										 						 "type": "pow"}}
 							    }
      },
   	 { "mark": "circle",
