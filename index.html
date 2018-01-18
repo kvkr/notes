@@ -27,12 +27,12 @@
     	"y": {"field": "money",  "type": "quantitative",
 						"size": { "field": "number",
           					  "type": "ordinal"},
+					 "scale": {"type": "log",
+										 "field": "money"},
 						/* "scale": {"type": "pow"}*/},
     				"color": { "field": "denom",
       							   "type": "nominal",
-      				 			   "scale": {"scheme": "category20c"}},
- 						"scale": {"type": "log",
-											"field": "money"}
+      				 			   "scale": {"scheme": "category20c"}}
 							    }
      },
   	 { "mark": "circle",
