@@ -12,6 +12,7 @@
 
   <script type="text/javascript">
     var yourVlSpec =
+<<<<<<< HEAD
 		{
 		"$schema": "https://vega.github.io/schema/vega-lite/v2.json",
 		"layer": [
@@ -50,6 +51,46 @@
 		]
 		"resolve": { "axis": { "y": "independent"}}
 		}
+=======
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "A simple bar chart with embedded data.",
+  "height": 1800,
+  "width": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/amitkaps/visdown/master/data/notes.csv"
+  				},
+ "vconcat":[
+     {"mark": "bar",
+  		"encoding": {
+    	"x": {"field": "year", "type": "ordinal"
+					 },
+    	"y": {"field": "money",  "type": "quantitative",
+						"size": { "field": "number",
+          					  "type": "ordinal"}
+					 },
+    				"color": { "field": "denom",
+      							   "type": "nominal",
+      				 			   "scale": {"range":
+										 		['#d53e4f','#f46d43','#fdae61',
+												'#fee08b','red','#e6f598',
+												'#abdda4','#66c2a5','#3288bd']}
+										 }
+							    }
+     },
+  	 { "mark": "circle",
+       "encoding": {
+       "x": {"field": "year", "type": "ordinal"},
+       "y": {"field": "denom", "type": "ordinal"},
+			 "size": {"field": "number", "type": "quantitative" },
+       "color": {"field": "denom",
+									"type": "nominal",
+									"value": "blue"}
+  								}
+     }
+ 					]
+}
+>>>>>>> parent of ec0d749... color
     vegaEmbed("#vis", yourVlSpec);
   </script>
 </body>
