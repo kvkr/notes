@@ -12,44 +12,44 @@
 
   <script type="text/javascript">
     var yourVlSpec =
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "description": "A simple bar chart with embedded data.",
-  "height": 1800,
-  "width": 800,
-  "data": {
-    "url": "https://raw.githubusercontent.com/amitkaps/visdown/master/data/notes.csv"
-  				},
- "vconcat":[
-     {"mark": "bar",
-  		"encoding": {
-    	"x": {"field": "year", "type": "ordinal"
-					 },
-    	"y": {"field": "money",  "type": "quantitative",
-						"size": { "field": "number",
-          					  "type": "ordinal"}
-					 },
-    				"color": { "field": "denom",
-      							   "type": "nominal",
-      				 			   "scale": {"range":
-										 		['red','#f46d43','#fdae61',
-												'#fee08b','#d53e4f','#e6f598',
-												'#abdda4','#66c2a5','#3288bd']}
-										 }
-							    }
-     },
-  	 { "mark": "circle",
-       "encoding": {
-       "x": {"field": "year", "type": "ordinal"},
-       "y": {"field": "denom", "type": "ordinal"},
-			 "size": {"field": "number", "type": "quantitative" },
-       "color": {"field": "denom",
-									"type": "nominal",
-									"value": "blue"}
-  								}
-     }
- 					]
-}
+		{
+		"$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+		"layer": [
+		{
+		"mark": "bar",
+		"data": {"url": "data/notes.csv"},
+		"transform":
+		[{"filter": {"field": "datum.denom", "equal": 500}}],
+		"encoding": {
+		"x": {
+		"field": "year",
+		"type": "ordinal"
+		},
+		"y": {
+		"field": "value",
+		"type": "quantitative"
+		}
+		}
+		},
+		{
+		"mark": "line",
+		"data": {"url": "data/notes.csv"},
+		"transform":
+		[ {"filter": {"field": "datum.denom", "equal": 1}}],
+		"encoding": {
+		"x": {
+		"field": "year",
+		"type": "nominal"
+		},
+		"y": {
+		"field": "value",
+		"type": "quantitative"
+		}
+		}
+		}
+		]
+		"resolve": { "axis": { "y": "independent"}}
+		}
     vegaEmbed("#vis", yourVlSpec);
   </script>
 </body>
