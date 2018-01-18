@@ -11,41 +11,37 @@
   <div id="vis"></div>
 
   <script type="text/javascript">
-    var yourVlSpec = {
+    var yourVlSpec =
+{
   "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
   "description": "A simple bar chart with embedded data.",
   "height": 400,
   "width": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/amitkaps/visdown/master/data/notes.csv"
-  },
+  				},
  "layer":[
      {"mark": "bar",
-  "encoding": {
-    "x": {
-      "field": "year",
-      "type": "ordinal"},
-    "y": {
-        "field": "money",
-        "type": "quantitative",
-        "size": {
-          "field": "number",
-          "type": "ordinal"},
-          "stack":  "normalize"},
-    "color": {
-      "field": "denom",
-      "type": "nominal",
-      "scale": {"scheme": "tableau10"}}
-}
+  		"encoding": {
+    	"x": {"field": "year", "type": "ordinal", "bin": "true"},
+    	"y": {"field": "money",  "type": "quantitative",
+						"size": { "field": "number",
+          					  "type": "ordinal"},
+          					  "stack":  "normalize"},
+    				"color": { "field": "denom",
+      							   "type": "nominal",
+      				 			   "scale": {"scheme": "tableau10"}}
+							    }
      },
-  { "mark": "circle",
-        "encoding": {
-        "x": {"field": "year", "type": "ordinal"},
-        "y": {"field": "denom", "type": "ordinal"}, "size": {"field": "number", "type": "quantitative" },
-        "color": {"value": "brown"}
-  }
-  }
- ]
+  	 { "mark": "circle",
+       "encoding": {
+       "x": {"field": "year", "type": "ordinal", "bin": "true"},
+       "y": {"field": "denom", "type": "ordinal"},
+			 "size": {"field": "number", "type": "quantitative" },
+       "color": {"value": "brown"}
+  								}
+     }
+ 					]
 }
     vegaEmbed("#vis", yourVlSpec);
   </script>
