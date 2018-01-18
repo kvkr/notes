@@ -26,7 +26,8 @@
     	"x": {"field": "year", "type": "ordinal"},
     	"y": {"field": "money",  "type": "quantitative",
 						"size": { "field": "number",
-          					  "type": "ordinal"}},
+          					  "type": "ordinal"},
+						"scale": {"type": "log"}},
     				"color": { "field": "denom",
       							   "type": "nominal",
       				 			   "scale": {"scheme": "category20c",
@@ -39,8 +40,8 @@
        "y": {"field": "denom", "type": "ordinal"},
 			 "size": {"field": "number", "type": "quantitative" },
        "color": {"field": "denom",
-									"type": "nominal",
-									"value": "blue"}
+			 					"type": "nominal",
+								 "value": "blue"}
   								}
      }
  					]
