@@ -23,7 +23,7 @@
  "layer":[
      {"mark": "bar",
   		"encoding": {
-    	"x": {"field": "year", "type": "ordinal", "bin": "true"},
+    	"x": {"field": "year", "type": "ordinal"},
     	"y": {"field": "money",  "type": "quantitative",
 						"size": { "field": "number",
           					  "type": "ordinal"},
@@ -35,7 +35,7 @@
      },
   	 { "mark": "circle",
        "encoding": {
-       "x": {"field": "year", "type": "ordinal", "bin": "true"},
+       "x": {"field": "year", "type": "ordinal"},
        "y": {"field": "denom", "type": "ordinal"},
 			 "size": {"field": "number", "type": "quantitative" },
        "color": {"value": "brown"}
