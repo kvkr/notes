@@ -26,12 +26,13 @@
     	"x": {"field": "year", "type": "ordinal"},
     	"y": {"field": "money",  "type": "quantitative",
 						"size": { "field": "number",
-          					  "type": "ordinal"},
-						"scale": {"type": "log"},
+          					  "type": "ordinal"},,
 						/* "scale": {"type": "pow"}*/},
     				"color": { "field": "denom",
       							   "type": "nominal",
       				 			   "scale": {"scheme": "category20c"}}
+ 						"scale": {"type": "log",
+											"field": "year"}
 							    }
      },
   	 { "mark": "circle",
